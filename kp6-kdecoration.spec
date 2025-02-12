@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.2.5
+%define		kdeplasmaver	6.3.0
 %define		qtver		5.15.2
 %define		kpname		kdecoration
 Summary:	A plugin-based library to create window decorations
 Name:		kp6-%{kpname}
-Version:	6.2.5
+Version:	6.3.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	34b115f981c0f153701c9b7e826ea987
+# Source0-md5:	2f4ef65102f54776f49899f88854cc63
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -69,15 +69,16 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 %doc README.md
-%attr(755,root,root) %{_libdir}/libkdecorations2.so.*.*
-%ghost %{_libdir}/libkdecorations2.so.6
-%attr(755,root,root) %{_libdir}/libkdecorations2private.so.*.*
-%ghost %{_libdir}/libkdecorations2private.so.11
+%ghost %{_libdir}/libkdecorations3.so.6
+%attr(755,root,root) %{_libdir}/libkdecorations3.so.*.*
+%ghost %{_libdir}/libkdecorations3private.so.1
+%attr(755,root,root) %{_libdir}/libkdecorations3private.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libkdecorations2.so
-%{_libdir}/libkdecorations2private.so
-%{_includedir}/KDecoration2
-%{_includedir}/KF6/kdecoration2_version.h
-%{_libdir}/cmake/KDecoration2
+%{_includedir}/KDecoration3
+%{_includedir}/KF6/kdecoration3_version.h
+%{_libdir}/cmake/KDecoration3
+%{_libdir}/libkdecorations3.so
+%{_libdir}/libkdecorations3private.so
+

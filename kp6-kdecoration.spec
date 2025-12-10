@@ -16,6 +16,7 @@ URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf6-ki18n-devel
 BuildRequires:	ninja
 BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
